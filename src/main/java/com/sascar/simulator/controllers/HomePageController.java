@@ -1,0 +1,22 @@
+package com.sascar.simulator.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+
+@Controller
+@RequestMapping("/")
+public class HomePageController {
+    
+    @RequestMapping
+    public String getHome(final Model model) {
+        return "redirect:/simulator/";
+    }
+
+    @RequestMapping(value="/teste", method=RequestMethod.GET)
+    public String requestMethodName() {
+        return "funciona";
+    }
+}

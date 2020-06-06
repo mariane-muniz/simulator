@@ -1,0 +1,22 @@
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+
+  datasource:
+    # driver-class-name: org.hsqldb.jdbc.JDBCDriver 
+    url: jdbc:mysql://localhost:3306/simulator?useSSL=false
+    username: root
+    password: password
+
+  jpa:
+    properties:
+      hibernate:
+        enable_lazy_load_no_trans: true
+    hibernate:
+      ddl-auto: update
+
+logging:
+  level:
+    com.sascar.simulator.jobs.ProcessingJob: DEBUG
