@@ -12,7 +12,10 @@ import org.springframework.util.Assert;
 
 import lombok.RequiredArgsConstructor;
 
+import javax.transaction.Transactional;
+
 @Service
+@Transactional
 @RequiredArgsConstructor
 public class VehicleServiceImpl implements VehicleService {
     private final VehicleRepository vehicleRepository;
@@ -36,8 +39,13 @@ public class VehicleServiceImpl implements VehicleService {
     }
 
     @Override
-    public List<Vehicle> getDelayeVehicles(final Date date) {
+    public List<Vehicle> getDelayedVehicles(final Date date) {
         Assert.notNull(date, "date cannot be null");
-        return this.vehicleRepository.getDelayeVehicles(date);
+        return this.vehicleRepository.getDelayedVehicles(date);
+    }
+
+    @Override
+    public long getVehicleTotalByStatus(final boolean status, final long simulationId) {
+        return this.vehicleRepository.getVehicleTotalByStatus(status, simulationId);
     }
 }

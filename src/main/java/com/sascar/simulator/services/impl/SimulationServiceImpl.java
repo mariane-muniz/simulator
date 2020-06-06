@@ -26,18 +26,17 @@ public class SimulationServiceImpl implements SimulationService {
 
     @Override
     public Simulation save(final Simulation simulation) {
+        Assert.notNull(simulation, "'simulation' cannot be null");
         return this.simulationRepository.save(simulation);
     }
 
     @Override
     public void delete(final long id) {
-        Assert.notNull(id, "'id' cannot be null");
         this.simulationRepository.deleteById(id);
     }
 
     @Override
     public Optional<Simulation> getSimulation(final long id) {
-        Assert.notNull(id, "'id' cannot be null");
         return this.simulationRepository.findById(id);
     }
 }

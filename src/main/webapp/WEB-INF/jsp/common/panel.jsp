@@ -16,11 +16,6 @@
                 <br>
                 Percent of positions sended: <span>20</span>%
                 <progress class="uk-progress" value="20" max="100"></progress>
-                <div>
-                    <div class="uk-background-muted uk-padding uk-panel">
-                        <p class="uk-h4">{"vehicle": "123", "driver": "345", "riskManagerId": "65"}</p>
-                    </div>
-                </div>
             </div>
         </div>
         <div class="uk-child-width-1-3@s uk-text-center" uk-grid>
@@ -33,7 +28,7 @@
             </div>
             <div>
                 <div class="uk-background-primary uk-light uk-padding uk-panel">
-                    <h1>0/0</h1>
+                    <h1><span class="online">0</span>/ <span class="offline">0</span></h1>
                     <p>Online/offline</p>
                 </div>
             </div>
@@ -62,6 +57,10 @@
                 </div>
             </div>
         </div>
+    </div>
+    <hr class="uk-divider-icon">
+    <div>
+        <div class="uk-background-muted uk-padding uk-panel" id="positions"></div>
     </div>
 </div>
 <style>

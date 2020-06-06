@@ -48,7 +48,7 @@ public class Simulation extends AbstractAudit {
     @OneToMany(
         cascade = CascadeType.ALL,
         fetch = FetchType.LAZY,
-        mappedBy = "simulationId"
+        mappedBy = "simulation"
     )
     private List<Position> positions;
 }

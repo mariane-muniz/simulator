@@ -32,5 +32,5 @@ public class Position extends AbstractAudit {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "simulation_id", nullable = false)
-    private Simulation simulationId;
+    private Simulation simulation;
 }

@@ -9,5 +9,7 @@ public interface VehicleService {
     void save(final Vehicle vehicle);
     void delete(final List<Vehicle> vehicles);
     void saveAll(final List<Vehicle> vehicles);
-    List<Vehicle> getDelayeVehicles(final Date date);
+    List<Vehicle> getDelayedVehicles(final Date date);
+
+    long getVehicleTotalByStatus(boolean status, long simulationId);
 }

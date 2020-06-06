@@ -5,7 +5,6 @@ spring:
       suffix: .jsp
 
   datasource:
-    # driver-class-name: org.hsqldb.jdbc.JDBCDriver 
     url: jdbc:mysql://localhost:3306/simulator?useSSL=false
     username: root
     password: password
@@ -16,7 +15,26 @@ spring:
         enable_lazy_load_no_trans: true
     hibernate:
       ddl-auto: update
+  kafka:
+    producer:
+      bootstrap-servers: 127.0.0.1:9092
 
 logging:
   level:
     com.sascar.simulator.jobs.ProcessingJob: DEBUG
+
+
+
+#    spring.kafka.bootstrap-servers = 172.19.24.12:9092,172.19.24.19:9092,172.19.24.20:9092
+#    spring.kafka.consumer.group-id= transpetro_group
+#    spring.kafka.consumer.topic= positions_central
+#    spring.kafka.producer.topic= topicAppClientPositionsJSON
+#    spring.kafka.consumer.enable-auto-commit=false
+#    spring.kafka.listener.ack-mode=MANUAL
+#    spring.kafka.listener.concurrency=10
+#
+#    spring.kafka.consumer.key-deserializer = org.apache.kafka.common.serialization.StringDeserializer
+#    spring.kafka.consumer.value-deserializer = org.apache.kafka.common.serialization.ByteArrayDeserializer
+#    spring.kafka.producer.key-serializer = org.apache.kafka.common.serialization.StringSerializer
+#    spring.kafka.producer.value-serializer = org.apache.kafka.common.serialization.StringSerializer
+#    spring.kafka.consumer.auto-offset-reset = earliest
